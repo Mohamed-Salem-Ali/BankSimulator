@@ -14,11 +14,11 @@ def createRandomData(dataNumber):
         ,'age': random.randrange(18,100)
         ,'address':fake.address()})
 
-def write_json(new_data, filename='users.json'):
+def write_json(new_data, filename='usersData.json'):
     with open(filename,'r+') as file:
         # First we load existing data into a dict.
         file_data = json.load(file)
-        print("file1= ",file_data)
+        print("file1= ",file_data,len(file_data))
         # Join new_data with file_data inside emp_details
         file_data.append(new_data)
         # Sets file's current position at offset.
