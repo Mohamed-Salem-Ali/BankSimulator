@@ -16,19 +16,29 @@ def createRandomData(dataNumber):
 
 def write_json(new_data, filename='users1.json'):
     with open(filename,'r+') as file:
+        
         # First we load existing data into a dict.
         file_data = json.load(file)
-        print("file1= ",file_data,len(file_data))
+        
+        # print("file1= ",file_data,len(file_data))
+        
         # Join new_data with file_data inside emp_details
-        file_data.append(new_data)
+        for i in range(len(new_data)):
+            file_data.append(new_data[i])
+        
         # Sets file's current position at offset.
         file.seek(0)
+        
         # convert back to json.
         json.dump(file_data, file, indent = 4)
  
-createRandomData(10)
+createRandomData(1000)
 
-write_json(user_data[1])
+
+# jsonFile = open("users1.json", "r")
+# data = json.load(jsonFile)
+# print(data,len(user_data))
+write_json(user_data)
 # file = "users.json"
 # def write_json(data,fileName="users.json"):
 #     with open(fileName,'w') as f:
