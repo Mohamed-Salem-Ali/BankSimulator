@@ -20,7 +20,7 @@ def write_json(new_data, filename='users.json'):
         file_data = json.load(file)
         print("file1= ",file_data)
         # Join new_data with file_data inside emp_details
-        file_data["users"].append(new_data)
+        file_data.append(new_data)
         # Sets file's current position at offset.
         file.seek(0)
         # convert back to json.
