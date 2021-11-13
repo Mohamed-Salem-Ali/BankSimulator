@@ -14,7 +14,7 @@ def createRandomData(dataNumber):
         ,'age': random.randrange(18,100)
         ,'address':fake.address()})
 
-def write_json(new_data, filename='usersData.json'):
+def write_json(new_data, filename='users1.json'):
     with open(filename,'r+') as file:
         # First we load existing data into a dict.
         file_data = json.load(file)
