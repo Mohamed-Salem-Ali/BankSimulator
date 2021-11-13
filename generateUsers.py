@@ -7,10 +7,12 @@ fake = Faker('en_US')
 user_data=[]
 for _ in range(10):
     user_data.append({'name': fake.name(),'age': randint(0, 100),'poo': float(random.randrange(155, 389))/100 })
-#for i in range(len(user_data)): 
-#   print(user_data[i],"\n")
+
 file = "users.json"
-def write_json(data,fileName="usersData.json"):
+def write_json(data,fileName="users.json"):
     with open(fileName,'w') as f:
         json.dump(data,f,indent=4)
-write_json(user_data)
+write_json(user_data[2])
+print(user_data[2])
+#for i in range(len(user_data)): 
+#   print(user_data[i],"\n")
