@@ -58,12 +58,18 @@ def main():
     print('\n Generate JSON data for users ')
     print('\n Mohamed Salem Ali \n')
     print('-'*40)
- 
+    inputMessage = """
+    Press (1) to add users every continuously :
+    press (2) to add users once :
+    """
     while True:
         try:
+            functionNumber = int(input(
+                "\nPress 1 to generate users every 10 seconds: "
+                ))
             numberOfData = int(input("\nEnter the number of users you want to generate : "))
-            print(f"\ngenerating {numberOfData} user")
-            write_json(numberOfData,'users1.json')
+            print(f"\nGenerating {numberOfData} user")
+            write_json(numberOfData,'data/DataUser/users1.json')
         except ValueError:
             print("\nNo.. input is not a number.")
             continue
