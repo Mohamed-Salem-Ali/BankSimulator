@@ -28,7 +28,6 @@ def write_json(numberOfData, filename):
       
         # First we load existing data into a dict.
         file_data = json.load(file)
-        
         # print("file1= ",file_data,len(file_data))
         index=file_data[-1]['id']
         # Join new_data with file_data inside emp_details
@@ -45,12 +44,42 @@ def write_json(numberOfData, filename):
         # convert back to json.
         json.dump(file_data, file, indent = 4)
         #Timer(5.0,write_json(numberOfData, filename)).start()
-        print(f"\n Added {numberOfData} user to the JSON file")
-        print(f"\n Total number of users is {file_data[-1]['id']}")
- 
+        if numberOfData <= 0:
+            print('-'*40)
+            print(f"\nno users have been added ^_^")
+            print(f"\nNumber of users still {file_data[-1]['id']}\n")
+            print('-'*40 ,"\n")
+        else:
+            print('-'*40)
+            print(f"\nGenerating {numberOfData} user")   
+            print(f"\nAdded {numberOfData} user to the JSON file")
+            print(f"\nTotal number of users is {file_data[-1]['id']}\n")
+            print('-'*40 , "\n")
 
+def users_once():
+    while True:
+        try:
+            numberOfData = int(input("\nEnter the number of users you want to generate : "))   
+            write_json(numberOfData,'data/userData/users1.json')
+            break
+        except ValueError:
+            print("\nNo.. input is not a number.")
+            continue
+        break
 
-# In[1]:
+def small_main(funcNumber):
+    while True:
+        try:
+            if funcNumber in [1,2]: 
+                if funcNumber == 1:
+                    print("continue phase")
+                    break
+                elif funcNumber == 2:
+                    users_once()
+                    break
+        except:
+            print("\nPlease press 1 or 2 :) ")
+            continue
 
 
 def main():
@@ -66,26 +95,10 @@ press (2) to add users once :
     while True:
         try:
             functionNumber = int(input(inputMessage).strip())
-            {'-'*40}
-            if functionNumber in [1,2]:
-                print("phase 1")  
-                if functionNumber == 1:
-                    print("continue phase")
-                elif functionNumber == 2:
-                    try:
-                        numberOfData = int(input("\nEnter the number of users you want to generate : "))
-                        print(f"\nGenerating {numberOfData} user")
-                        write_json(numberOfData,'data/userData/users1.json')
-                    except ValueError:
-                        print("\nNo.. input is not a number.")
-                        continue
+            small_main(functionNumber)
         except ValueError:
             print("\nPlease press 1 or 2 :) ")
             continue
-        except EOFError:
-            restart = input('\nWould you like to restart? Enter yes.\n')
-            if restart.lower() != 'yes':
-                break
         restart = input('\nWould you like to restart? Enter yes.\n')
         if restart.lower() != 'yes':
             break
