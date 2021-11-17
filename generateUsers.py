@@ -65,24 +65,30 @@ press (2) to add users once :
 ======> """
     while True:
         try:
-            
             functionNumber = int(input(inputMessage).strip())
             {'-'*40}
             if functionNumber in [1,2]:
-                print("phase 1")
-            else:
-                print("error in phase 1")    
-            numberOfData = int(input("\nEnter the number of users you want to generate : "))
-            print(f"\nGenerating {numberOfData} user")
-            write_json(numberOfData,'data/userData/users1.json')
+                print("phase 1")  
+                if functionNumber == 1:
+                    print("continue phase")
+                elif functionNumber == 2:
+                    try:
+                        numberOfData = int(input("\nEnter the number of users you want to generate : "))
+                        print(f"\nGenerating {numberOfData} user")
+                        write_json(numberOfData,'data/userData/users1.json')
+                    except ValueError:
+                        print("\nNo.. input is not a number.")
+                        continue
         except ValueError:
-            print("\nNo.. input is not a number.")
+            print("\nPlease press 1 or 2 :) ")
             continue
         except EOFError:
             restart = input('\nWould you like to restart? Enter yes.\n')
             if restart.lower() != 'yes':
                 break
-
+        restart = input('\nWould you like to restart? Enter yes.\n')
+        if restart.lower() != 'yes':
+            break
 
 if __name__ == "__main__":
 	main()
