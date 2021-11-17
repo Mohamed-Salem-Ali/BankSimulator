@@ -121,7 +121,7 @@ press (2) to add users once :
         try:
             small_main(inputMessage)
         except ValueError:
-            print("\nPlease press 1 or 2 :) ")
+            print("\nPlease press 1 or 2 x) ")
             continue
         restart = input('\nWould you like to restart? Enter yes.\n')
         if restart.lower() != 'yes':
