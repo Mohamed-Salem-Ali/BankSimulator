@@ -88,9 +88,9 @@ def users_cont():
                 write_json(numberOfData,'data/userData/users.json')
                 break
     except ValueError:
-        print("ValueError")
+        print("\nValueError")
     except FileNotFoundError:
-        print("fileNotFound")
+        print("\nfileNotFound")
     except KeyboardInterrupt:
         pass
 def small_main(x):
