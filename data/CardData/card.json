@@ -1,8 +1,7 @@
 [
     {
         "transactionId": 1,
-        "userId": "Dr. Richard Johnson",
-        "amount": 72,
-        "address": "6129 Renee Point\nNew Johnmouth, RI 70700"
+        "userId": 1,
+        "amount": 72
     }
 ]
