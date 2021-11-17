@@ -58,25 +58,30 @@ def main():
     print('\n Generate JSON data for users ')
     print('\n Mohamed Salem Ali \n')
     print('-'*40)
-    inputMessage = """
-    Press (1) to add users every continuously :
-    press (2) to add users once :
-    """
+    inputMessage = f"""
+{'-'*40}
+Press (1) to add users every continuously :
+press (2) to add users once :
+======> """
     while True:
         try:
-            functionNumber = int(input(
-                "\nPress 1 to generate users every 10 seconds: "
-                ))
+            
+            functionNumber = int(input(inputMessage).strip())
+            {'-'*40}
+            if functionNumber in [1,2]:
+                print("phase 1")
+            else:
+                print("error in phase 1")    
             numberOfData = int(input("\nEnter the number of users you want to generate : "))
             print(f"\nGenerating {numberOfData} user")
-            write_json(numberOfData,'data/DataUser/users1.json')
+            write_json(numberOfData,'data/userData/users1.json')
         except ValueError:
             print("\nNo.. input is not a number.")
             continue
-
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
-            break
+        except EOFError:
+            restart = input('\nWould you like to restart? Enter yes.\n')
+            if restart.lower() != 'yes':
+                break
 
 
 if __name__ == "__main__":
