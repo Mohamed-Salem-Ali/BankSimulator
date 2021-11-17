@@ -46,7 +46,7 @@ def write_json(numberOfData, filename):
         #Timer(5.0,write_json(numberOfData, filename)).start()
         if numberOfData <= 0:
             print('-'*40)
-            print(f"\nno users have been added ^_^")
+            print(f"\nNo users have been added ^_^")
             print(f"\nNumber of users still {file_data[-1]['id']}\n")
             print('-'*40 ,"\n")
         else:
@@ -59,27 +59,52 @@ def write_json(numberOfData, filename):
 def users_once():
     while True:
         try:
-            numberOfData = int(input("\nEnter the number of users you want to generate : "))   
-            write_json(numberOfData,'data/userData/users1.json')
+            numberOfData = int(input("\nEnter the number of users you want to generate : ").strip())   
+            write_json(numberOfData,'data/userData/users.json')
+            break
+    
+        except FileNotFoundError:
+            print("fileNotFound")
             break
         except ValueError:
             print("\nNo.. input is not a number.")
             continue
-        break
-
-def small_main(funcNumber):
+        
+def users_cont():
     while True:
         try:
+            numberOfData = int(input("\nEnter the number of users you want to generate : ").strip())
+            numberOfSeconds =int(input("\nEnter the number of seconds : ").strip())
+            break  
+        except ValueError:
+            print("\nNo.. input is not a number.")
+            continue
+    try:
+        while True:
+            if numberOfData > 0:
+                time.sleep(numberOfSeconds)
+                write_json(numberOfData,'data/userData/users.json')
+            else:
+                write_json(numberOfData,'data/userData/users.json')
+                break
+    except ValueError:
+        print("ValueError")
+    except FileNotFoundError:
+        print("fileNotFound")
+    except KeyboardInterrupt:
+        pass
+def small_main(x):
+        try:
+            funcNumber = int(input(x).strip())
             if funcNumber in [1,2]: 
                 if funcNumber == 1:
-                    print("continue phase")
-                    break
+                    users_cont()
                 elif funcNumber == 2:
                     users_once()
-                    break
+            else:
+                print("1 or 2 Onlyyyy XD")
         except:
             print("\nPlease press 1 or 2 :) ")
-            continue
 
 
 def main():
@@ -94,8 +119,7 @@ press (2) to add users once :
 ======> """
     while True:
         try:
-            functionNumber = int(input(inputMessage).strip())
-            small_main(functionNumber)
+            small_main(inputMessage)
         except ValueError:
             print("\nPlease press 1 or 2 :) ")
             continue
