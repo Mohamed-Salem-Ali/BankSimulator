@@ -1,7 +1,107 @@
 [
     {
         "transactionId": 1,
-        "userId":1,
-        "amount": 72
+        "amount": 72,
+        "userId": 1
+    },
+    {
+        "transactionId": 2,
+        "amount": 275527,
+        "userId": 1
+    },
+    {
+        "transactionId": 3,
+        "amount": 120749,
+        "userId": 1
+    },
+    {
+        "transactionId": 4,
+        "amount": 532469,
+        "userId": 1
+    },
+    {
+        "transactionId": 5,
+        "amount": 339152,
+        "userId": 1
+    },
+    {
+        "transactionId": 6,
+        "amount": 688900,
+        "userId": 1
+    },
+    {
+        "transactionId": 7,
+        "amount": 445950,
+        "userId": 1
+    },
+    {
+        "transactionId": 8,
+        "amount": 866753,
+        "userId": 1
+    },
+    {
+        "transactionId": 9,
+        "amount": 409763,
+        "userId": 1
+    },
+    {
+        "transactionId": 10,
+        "amount": 349362,
+        "userId": 1
+    },
+    {
+        "transactionId": 11,
+        "amount": 232946,
+        "userId": 1
+    },
+    {
+        "transactionId": 12,
+        "amount": 159899,
+        "userId": 1
+    },
+    {
+        "transactionId": 13,
+        "amount": 640508,
+        "userId": 1
+    },
+    {
+        "transactionId": 14,
+        "amount": 485103,
+        "userId": 1
+    },
+    {
+        "transactionId": 15,
+        "amount": 105525,
+        "userId": 1
+    },
+    {
+        "transactionId": 16,
+        "amount": 37098,
+        "userId": 1
+    },
+    {
+        "transactionId": 17,
+        "amount": 518633,
+        "userId": 1
+    },
+    {
+        "transactionId": 18,
+        "amount": 750157,
+        "userId": 1
+    },
+    {
+        "transactionId": 19,
+        "amount": 921192,
+        "userId": 1
+    },
+    {
+        "transactionId": 20,
+        "amount": 746680,
+        "userId": 1
+    },
+    {
+        "transactionId": 21,
+        "amount": 728714,
+        "userId": 1
     }
 ]
