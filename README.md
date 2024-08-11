@@ -1,5 +1,4 @@
 
-```markdown
 # BankSimulator
 
 ## Overview
@@ -81,4 +80,3 @@ The JSON files should be structured as follows:
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
